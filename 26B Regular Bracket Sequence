@@ -1,0 +1,59 @@
+
+import java.util.Scanner;
+import java.util.Stack;
+
+public class main {  
+    public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    String sequence = input.next();
+    int remove = 0;
+    Stack<Character> bracketStack = new Stack<Character>();   
+    for (char c : sequence.toCharArray()) {
+        if (c == '(') {
+            bracketStack.push(c);
+            }
+        else if (c == ')') {
+            if (!bracketStack.empty() && bracketStack.peek() == '(') {
+                bracketStack.pop();
+            }
+            else
+            remove++;
+        }
+    }
+    while (!bracketStack.empty()) {
+        bracketStack.pop();
+        remove++;
+    }
+    System.out.println(sequence.length() - remove);
+    
+}
+}
+import java.util.Scanner;
+import java.util.Stack;
+
+public class main {  
+    public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    String sequence = input.next();
+    int remove = 0;
+    Stack<Character> bracketStack = new Stack<Character>();   
+    for (char c : sequence.toCharArray()) {
+        if (c == '(') {
+            bracketStack.push(c);
+            }
+        else if (c == ')') {
+            if (!bracketStack.empty() && bracketStack.peek() == '(') {
+                bracketStack.pop();
+            }
+            else
+            remove++;
+        }
+    }
+    while (!bracketStack.empty()) {
+        bracketStack.pop();
+        remove++;
+    }
+    System.out.println(sequence.length() - remove);
+    
+}
+}
