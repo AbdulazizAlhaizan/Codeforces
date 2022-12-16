@@ -1,0 +1,29 @@
+import java.util.Scanner;;
+public class main {   
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int t = input.nextInt();
+        while (t-- != 0) {
+            String format = input.next();
+            String word = input.next();
+            int last = 0; // last is made to make sure we dont have out of bound exception
+            int time = 0;
+            if (word.length() == 1) {
+                System.out.println(0);
+                continue;
+            }
+            for (int i = 0; i < word.length() - 1 ; i++) {
+                time += Math.abs( format.indexOf(word.charAt(i))  - format.indexOf(word.charAt(i+1)));
+                last = format.indexOf(word.charAt(i+1));
+            }
+            time += Math.abs( last  - format.indexOf(word.charAt(word.length()-1)));
+            System.out.println(time);
+        }
+}
+}
+   
+
+
+
+
