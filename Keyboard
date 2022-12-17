@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String keyBoard = "qwertyuiopasdfghjkl;zxcvbnm,./";
+        char dirctoin = input.next().charAt(0);
+        String messege = input.next();
+        String decrypt = "";
+        if (dirctoin == 'R') {
+            for (int i = 0; i < messege.length(); i++) {
+                decrypt += keyBoard.substring(keyBoard.indexOf(messege.charAt(i)) - 1,keyBoard.indexOf(messege.charAt(i)) );
+            }
+        }
+        else if (dirctoin == 'L'){
+            for (int i = 0; i < messege.length(); i++) {
+                decrypt += keyBoard.substring(keyBoard.indexOf(messege.charAt(i)) + 1 ,keyBoard.indexOf(messege.charAt(i)) + 2);
+            }
+        }
+        System.out.println(decrypt);
+       
+    }
+}
