@@ -1,0 +1,24 @@
+
+import java.util.Scanner;
+public class Main {  
+    public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    String word = input.next();
+    if (word.length() == 1){
+    if (word.equals(word.toUpperCase())) {
+        word = word.toLowerCase();
+    } else {
+        word = word.toUpperCase();
+    }
+}
+    else{
+    String wordRemoveFL = word.substring(1);   
+       if( word.toUpperCase().equals(word) )
+       word = word.toLowerCase(); 
+        else if (wordRemoveFL.equals(wordRemoveFL.toUpperCase()))
+        word = word.substring(0,1).toUpperCase() + wordRemoveFL.toLowerCase();
+         
+    }
+    System.out.println(word);
+}
+}
