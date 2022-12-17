@@ -1,0 +1,12 @@
+import java.util.Scanner;;
+public class Main {   
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int strLength = input.nextInt();
+        String zerosOnes = input.next();
+        int minimum = Math.abs( zerosOnes.replaceAll("0", "").length() - zerosOnes.replaceAll("1", "").length()); 
+        System.out.println(minimum);
+}
+}
+   
