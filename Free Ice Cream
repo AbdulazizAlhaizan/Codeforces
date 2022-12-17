@@ -1,0 +1,32 @@
+
+
+import java.util.Scanner;
+
+
+public class Main {  
+    public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    int peopleInQ = input.nextInt();
+    long packs = input.nextLong();
+    int sadKid = 0;
+    input.nextLine();
+    while (peopleInQ-- != 0) {
+        
+        String person = input.nextLine();
+        String[] arr = person.split("\\s");
+        long d = Long.parseLong(arr[1]);
+        if (arr[0].equals("+")) {
+            packs += d;
+        }
+        else{
+            if (packs >= d) {
+                packs -= d;
+            } else {
+                sadKid++;
+            }
+        }
+        
+    }
+    System.out.println(packs + " " + sadKid);  
+}
+}
