@@ -1,0 +1,12 @@
+import java.util.Scanner;
+import java.lang.StringBuilder;;
+public class Main {
+    public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    int number = input.nextInt();
+    StringBuilder  x = new StringBuilder(Integer.toString(number));
+    String result = x.reverse().toString().equals(Integer.toString(number)) ? "Yes" : "No";
+    System.out.println(result); 
+    
+}
+}
