@@ -1,0 +1,22 @@
+
+import java.util.Scanner;
+public class Main {  
+    public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    String word = input.next();
+    int upper = 0;
+    int lower = 0;
+    char[] arr = word.toCharArray();
+    for (char c : arr) {
+        if (Character.isUpperCase(c)) {
+            upper++;
+        } else {
+            lower++;
+        }
+    }
+    if (upper > lower) 
+        System.out.println(word.toUpperCase()); 
+    else
+        System.out.println(word.toLowerCase());
+}
+}
