@@ -1,0 +1,44 @@
+import java.util.Scanner;;
+public class main {   
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int t = input.nextInt();
+        while (t-- != 0) {
+           int number = input.nextInt();
+           int x = 10000;
+           int[] terms = new int[4];
+           int nTerms = 0;
+           int term = 0;
+           while (number % x != 0) {
+            
+            if (x == 1) break;
+            if (number == number % x){
+            x /= 10;   
+            continue;}
+            term = (number - number%x);
+            terms[nTerms] = term ;
+            number = number  - (number - number%x);
+            x /= 10;
+            nTerms++;
+            
+            
+           }
+           terms[nTerms] = number;
+           System.out.println(nTerms == 0 ? 1 : nTerms+1);
+           for (int i = 0; i < terms.length; i++) {
+            if (terms[i]!= 0)
+            System.out.print(terms[i] +" ");
+           }
+           System.out.println();
+
+        }
+        
+        
+}
+}
+   
+
+
+
+
