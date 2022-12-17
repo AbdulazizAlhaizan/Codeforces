@@ -1,0 +1,24 @@
+import java.util.Scanner;;
+public class Main{   
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int TeamsNumber = input.nextInt();
+        int[] home = new int[TeamsNumber];
+        int[] away = new int[TeamsNumber];
+        for (int i = 0; i < TeamsNumber; i++) {
+            home[i] = input.nextInt();
+            away[i] = input.nextInt();
+        }
+        int matches = 0;
+        for (int i = 0; i < away.length; i++) {
+            for (int j = 0; j < away.length; j++) {
+                if(home[i] == away[j])
+                matches++;
+            }
+        }
+        System.out.println(matches);
+        
+        
+}
+}
