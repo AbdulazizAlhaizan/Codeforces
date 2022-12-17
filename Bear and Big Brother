@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+   
+
+
+    public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    int a = input.nextInt();
+    int b = input.nextInt();
+   int years = 0;
+   do {
+      a*=3;
+      b*=2;
+      years++;
+   } while (b >= a);
+   System.out.println(years);
+    
+    
+}
+}
