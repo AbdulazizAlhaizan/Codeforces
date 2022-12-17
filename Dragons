@@ -1,0 +1,42 @@
+
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+
+public class Main {  
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int strength = input.nextInt();
+        int dragons = input.nextInt();
+        Queue<Integer> dragonStrengthQ = new LinkedList<>();
+        Queue<Integer> bounsQ = new LinkedList<>();
+        
+        for (int i = 0; i < dragons; i++) {
+            dragonStrengthQ.add(input.nextInt());
+            bounsQ.add(input.nextInt());
+        }
+        
+        int i = 0;
+        while (i < dragons ) {
+            i++;
+            if(!dragonStrengthQ.isEmpty()){
+            if (dragonStrengthQ.peek() < strength) {
+                dragonStrengthQ.poll();
+                strength += bounsQ.poll();
+                i = 0;
+            }
+            else{
+            dragonStrengthQ.add(dragonStrengthQ.poll());
+            bounsQ.add(bounsQ.poll());
+            } 
+            
+        }
+        else
+        break;
+    }
+        System.out.println(dragonStrengthQ.isEmpty() ? "YES" : "NO");   
+}
+}
+   
