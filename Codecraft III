@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"} ;
+        String month = input.next();
+        int left = input.nextInt();
+        int monthIndex = 0;
+        for (int i = 0; i < months.length; i++) {
+            if (month.equals(months[i])) {
+                monthIndex+=i;
+                break;
+            }
+        }
+        System.out.println(months[(left + monthIndex)%12]);
+
+
+    }
+}
