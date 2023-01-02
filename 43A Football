@@ -1,0 +1,32 @@
+
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Main {
+
+   public static void main(String[] args) {
+   
+   Scanner input = new Scanner(System.in);
+   int n = input.nextInt();
+  
+   Map<String , Integer> names = new HashMap<>();
+   for (int i = 0; i < n; i++) {
+      String user = input.next();
+      if (names.get(user) == null)
+      names.put(user, 1);
+      else
+      names.put(user, names.get(user) + 1);
+   }
+   Integer t = 0;
+   String team = "";
+   for (Map.Entry<String, Integer> obj : names.entrySet()) {
+      if (obj.getValue() > t ){
+      t = obj.getValue();
+      team = obj.getKey();
+   }
+   }
+   System.out.println(team);
+   }
+   }
