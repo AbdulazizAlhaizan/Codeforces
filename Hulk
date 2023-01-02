@@ -1,0 +1,20 @@
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int layer = input.nextInt();
+        String feeling = "";
+       for (int i = 1; i <= layer; i++) {
+        if (i%2 == 0 && i > 1) 
+            feeling+="I love";
+        else
+            feeling+="I hate";
+        if (i/layer!= 1) 
+            feeling+= " that ";
+       }
+        System.out.println(feeling + " it");
+    }
+}
