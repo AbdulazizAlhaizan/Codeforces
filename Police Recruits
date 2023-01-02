@@ -1,0 +1,23 @@
+
+import java.util.Scanner;
+public class Main {
+
+   public static void main(String[] args) {
+   
+   Scanner input = new Scanner(System.in);
+   int n = input.nextInt();
+   int crimes = 0;
+   int officer = 0;
+   while (n-- != 0) {
+      int in = input.nextInt();
+      if (in==-1 && officer==0) {
+         crimes++;
+      } else {
+         officer+=in;
+      }
+   }
+   System.out.println(crimes);
+      
+
+}
+}
