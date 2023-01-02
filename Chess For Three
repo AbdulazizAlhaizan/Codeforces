@@ -1,0 +1,30 @@
+
+import java.util.Scanner;
+public class Main {
+
+   public static void main(String[] args) {
+   
+   Scanner input = new Scanner(System.in);
+   int n = input.nextInt();
+   int[] arr ={1,2,3}; 
+   int spectetor = 3;
+   int winner = 0;
+   String end = "YES";
+   while (n-- != 0) {
+      winner = input.nextInt();
+      if (winner!= spectetor) {
+         for (int i = 0; i < 3 ; i++) {
+            if (arr[i]!= winner && arr[i] != spectetor) {
+               spectetor = arr[i];
+               break;
+            }
+         }
+      }
+      else{
+         end = "NO";
+         break;
+      }
+   }
+   System.out.println(end);
+}
+}
