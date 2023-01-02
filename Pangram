@@ -1,0 +1,27 @@
+
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int len = input.nextInt();
+        String word = input.next();
+        word = word.toLowerCase();
+        String alphabet  = "abcdefghijklmnopqrstuvwxyz";
+        char[] chars = alphabet.toCharArray();
+        if (len < 26) 
+            System.out.println("NO");
+        else{
+            boolean flag = true;
+            for (char c : chars) {
+                
+                if (word.indexOf(c) < 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            System.out.println(flag? "YES" : "NO");
+
+        }
+    }
+}
