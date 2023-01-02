@@ -1,0 +1,82 @@
+
+
+import java.util.Scanner;
+
+public class Main {
+
+   public static void main(String[] args) {
+   
+   Scanner input = new Scanner(System.in);
+   int t = input.nextInt();
+   while (t-- > 0) {
+      int rows = input.nextInt();
+      int cols = input.nextInt();
+      int [][] arr = new int[rows][cols];
+      for (int i = 0; i < rows; i++) {
+         for (int j = 0; j < cols; j++) {
+            arr[i][j] = input.nextInt();
+         }
+      }
+      int maxmal = 0;
+      for (int i = 0; i < rows; i++) {
+         for (int j = 0; j < cols; j++) {
+            int sum = 0;
+            int counter = 0;
+            boolean flag = true;
+            int r = i;
+            int c = j;
+            while ( r < rows  && c < cols  ) { // down left to righ
+               sum += arr[r][c];
+               r++;
+               c++;
+               flag = false;
+            }
+            counter = flag ? counter : counter+1;
+            r = i;
+            c = j;
+            while (c >= 0 && r < rows ) { // down right to left
+               sum += arr[r][c];
+               r++;
+               c--;
+               flag = false;
+               
+            }
+            counter = flag ? counter : counter+1;
+            flag = true;
+            r = i;
+            c = j;
+            while (r>=0 && c< cols) {
+               sum += arr[r][c];  // up left to right
+               c++;
+               r--;
+               flag = false;
+               
+            }
+            counter = flag ? counter : counter+1;
+            flag = true;
+            r = i;
+            c = j;
+            while (r >= 0 && c >= 0 ) {
+               sum += arr[r][c]; // up right to left
+               c--;
+               r--;
+               flag = false;
+               
+            }
+            counter = flag ? counter : counter+1;
+            
+            while (counter!= 1) {
+               sum-=arr[i][j];
+               counter--;
+            }
+            
+            if (sum>maxmal)
+            maxmal = sum ;
+            
+
+         }
+      }
+      System.out.println(maxmal);
+   }
+   }
+}
