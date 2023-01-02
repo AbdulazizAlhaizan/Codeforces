@@ -1,0 +1,31 @@
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int[] floor = new int [n];
+        int[] foot = new int [n];
+        int[] chain = new int [n];
+        for (int i = 0; i < n; i++) {
+            floor[i] = input.nextInt();
+        }
+        for (int i = 0; i < n; i++) {
+            foot[i] = input.nextInt();
+        }
+        for (int i = 0; i < n; i++) {
+            chain[i] = input.nextInt();
+        }
+        double fotToFloor = 0;
+        for (int i = 0; i < n; i++) {
+            fotToFloor+= Math.pow(Math.abs(floor[i] - foot[i]), 2);
+        }
+        
+
+        double chainToflor = 0;
+        for (int i = 0; i < n; i++) {
+            chainToflor+= Math.pow(Math.abs(floor[i] - chain[i]), 2);
+        }
+        System.out.println(Math.sqrt(chainToflor) < Math.sqrt(fotToFloor) ? "MaratonIME" : "Yan" ); 
+    }
+}
