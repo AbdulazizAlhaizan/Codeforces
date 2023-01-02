@@ -1,0 +1,26 @@
+
+import java.util.LinkedList;
+import java.util.Scanner;
+public class Main {
+
+   public static void main(String[] args) {
+   
+   Scanner input = new Scanner(System.in);
+   String word = input.next();
+   String[] names = {"Danil", "Olya", "Slava", "Ann" , "Nikita"};
+   boolean flag = true;
+   int conter = 0;
+   for (int index = 0; index < names.length; index++) {
+      if (word.contains(names[index]) && word.indexOf(names[index]) == word.lastIndexOf(names[index])) 
+      conter++;
+      else if(word.contains(names[index]))
+      flag = false;
+      
+   } 
+   System.out.println(conter == 1 && flag  ? "YES": "NO");
+    
+
+      
+
+}
+}
