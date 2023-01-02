@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int counter = 0;
+        int testCases = input.nextInt();
+        do {
+            String word = input.nextLine();
+            if (word.replaceAll("0", "").length() > 3 ) {
+                counter++;
+            }
+            
+        } while (testCases-- != 0);
+        System.out.println(counter);
+        
+    }
+}
